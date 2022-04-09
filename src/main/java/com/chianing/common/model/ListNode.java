@@ -4,25 +4,34 @@ public class ListNode {
     public int val;
     public ListNode next;
 
-    ListNode(int x) {
+    public ListNode() {
+    }
+
+    public ListNode(int x) {
         val = x;
     }
 
     public static ListNode getSingleNode() {
-        return new ListNode(1);
+        return getListNode(1);
     }
 
     public static ListNode getListNode() {
-        ListNode node1 = new ListNode(1);
-        ListNode node2 = new ListNode(5);
-        ListNode node3 = new ListNode(2);
-        ListNode node4 = new ListNode(4);
+        return getListNode(1, 5, 2, 4);
+    }
 
-        node1.next = node2;
-        node2.next = node3;
-        node3.next = node4;
+    public static ListNode getListNode(int... vals) {
+        if (vals.length == 0) {
+            return null;
+        }
 
-        return node1;
+        ListNode result = new ListNode();
+        ListNode resultCopy = result;
+        for (int val : vals) {
+            resultCopy.next = new ListNode(val);
+            resultCopy = resultCopy.next;
+        }
+
+        return result.next;
     }
 
 }
