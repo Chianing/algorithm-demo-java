@@ -1,4 +1,4 @@
-package com.chianing.listNode;
+package com.chianing.list;
 
 import com.chianing.common.model.ListNode;
 
