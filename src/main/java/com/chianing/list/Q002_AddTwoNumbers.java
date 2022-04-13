@@ -4,7 +4,7 @@ import com.chianing.common.model.ListNode;
 
 /**
  * 两数之和
- * https://leetcode-cn.com/problems/add-two-numbers/
+ * <a href="https://leetcode-cn.com/problems/add-two-numbers/">https://leetcode-cn.com/problems/add-two-numbers/</a>
  */
 public class Q002_AddTwoNumbers {
 

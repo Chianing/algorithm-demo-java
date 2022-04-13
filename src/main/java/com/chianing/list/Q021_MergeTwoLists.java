@@ -4,7 +4,7 @@ import com.chianing.common.model.ListNode;
 
 /**
  * 合并两个有序链表
- * https://leetcode-cn.com/problems/merge-two-sorted-lists/submissions/
+ * <a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/submissions/">https://leetcode-cn.com/problems/merge-two-sorted-lists/submissions/</a>
  */
 public class Q021_MergeTwoLists {
 

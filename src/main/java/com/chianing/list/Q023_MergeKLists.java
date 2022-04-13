@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 
 /**
  * 合并k个升序链表
- * https://leetcode-cn.com/problems/merge-k-sorted-lists/
+ * <a href="https://leetcode-cn.com/problems/merge-k-sorted-lists/">https://leetcode-cn.com/problems/merge-k-sorted-lists/</a>
  */
 public class Q023_MergeKLists {
 

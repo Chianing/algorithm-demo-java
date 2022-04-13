@@ -4,7 +4,7 @@ import com.chianing.common.model.ListNode;
 
 /**
  * 两两交换链表相邻节点
- * https://leetcode-cn.com/problems/swap-nodes-in-pairs/
+ * <a href="https://leetcode-cn.com/problems/swap-nodes-in-pairs/">https://leetcode-cn.com/problems/swap-nodes-in-pairs/</a>
  */
 public class Q024_SwapPairs {
 
