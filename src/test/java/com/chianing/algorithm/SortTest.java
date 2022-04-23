@@ -17,6 +17,12 @@ class SortTest {
     }
 
     @Test
+    void selectionSort() {
+        LogUtil.printAfterLog(solution.selectionSort(nums1));
+        LogUtil.printAfterLog(solution.selectionSort(nums2));
+    }
+
+    @Test
     void insertSort() {
         LogUtil.printAfterLog(solution.insertSort(nums1));
         LogUtil.printAfterLog(solution.insertSort(nums2));
@@ -24,7 +30,13 @@ class SortTest {
 
     @Test
     void shellSort() {
-        // LogUtil.printAfterLog(solution.shellSort(nums1));
+        LogUtil.printAfterLog(solution.shellSort(nums1));
         LogUtil.printAfterLog(solution.shellSort(nums2));
+    }
+
+    @Test
+    void mergeSort() {
+        LogUtil.printAfterLog(solution.mergeSort(nums1));
+        LogUtil.printAfterLog(solution.mergeSort(nums2));
     }
 }
