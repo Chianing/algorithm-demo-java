@@ -166,7 +166,7 @@ public class Sort {
      * 快速排序
      * <p>
      * 通过一趟排序将待排记录分隔成独立的两部分 其中一部分记录的关键字均比另一部分的关键字小
-     * 可分别对这两部分记录继续进行排序 以达到整个序列有序。
+     * 可分别对这两部分记录继续进行排序 以达到整个序列有序
      */
     public int[] quickSort(int[] nums, int left, int right) {
         if (nums.length <= 1) {
@@ -201,6 +201,58 @@ public class Sort {
         int tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = tmp;
+    }
+
+    /**
+     * 堆排序
+     * <p>
+     * 先构建最大堆 然后依次摘除堆顶节点 再对堆进行平衡
+     * 即堆顶节点与末尾的叶子节点交换 摘除后平衡堆时 就不考虑做过堆顶节点的元素了
+     */
+    public int[] heapSort(int[] arr) {
+        int length = arr.length;
+        if (length <= 1) {
+            return arr;
+        }
+
+        buildMaxHeap(arr);
+
+        for (int i = length - 1; i > 0; i--) {
+            swap(arr, 0, i);
+            length--;
+            heapify(arr, 0, length);
+        }
+
+        return arr;
+
+    }
+
+    private void buildMaxHeap(int[] arr) {
+        int length = arr.length;
+        for (int i = (length / 2) + 1; i >= 0; i--) {
+            heapify(arr, i, length);
+        }
+    }
+
+    private void heapify(int[] arr, int index, int length) {
+        if (index >= length) {
+            return;
+        }
+        int leftIndex = index * 2 + 1;
+        int rightIndex = index * 2 + 2;
+        int maxIndex = index;
+
+        if (leftIndex < length && arr[maxIndex] < arr[leftIndex]) {
+            maxIndex = leftIndex;
+        }
+        if (rightIndex < length && arr[maxIndex] < arr[rightIndex]) {
+            maxIndex = rightIndex;
+        }
+
+        if (maxIndex != index) {
+            swap(arr, index, maxIndex);
+            heapify(arr, maxIndex, length);
+        }
     }
 
 }

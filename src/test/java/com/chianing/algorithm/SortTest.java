@@ -45,4 +45,10 @@ class SortTest {
         LogUtil.printAfterLog(solution.quickSort(nums1, 0, nums1.length - 1));
         LogUtil.printAfterLog(solution.quickSort(nums2, 0, nums2.length - 1));
     }
+
+    @Test
+    void heapSort() {
+        LogUtil.printAfterLog(solution.heapSort(nums1));
+        LogUtil.printAfterLog(solution.heapSort(nums2));
+    }
 }
