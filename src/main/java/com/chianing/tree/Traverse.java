@@ -116,6 +116,7 @@ public class Traverse {
             for (int i = 0; i < size; i++) {
                 TreeNode node = tmpQueue.poll();
 
+                assert node != null;
                 if (node.left != null) {
                     tmpQueue.offer(node.left);
                 }
