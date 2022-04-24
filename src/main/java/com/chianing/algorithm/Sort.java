@@ -130,7 +130,8 @@ public class Sort {
     /**
      * 归并排序
      * <p>
-     * 将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序
+     * 将已有序的子序列合并 得到完全有序的序列
+     * 即先使每个子序列有序，再使子序列段间有序
      */
     public int[] mergeSort(int[] nums) {
         int length = nums.length;
@@ -159,6 +160,47 @@ public class Sort {
             }
         }
         return result;
+    }
+
+    /**
+     * 快速排序
+     * <p>
+     * 通过一趟排序将待排记录分隔成独立的两部分 其中一部分记录的关键字均比另一部分的关键字小
+     * 可分别对这两部分记录继续进行排序 以达到整个序列有序。
+     */
+    public int[] quickSort(int[] nums, int left, int right) {
+        if (nums.length <= 1) {
+            return nums;
+        }
+
+        if (left < right) {
+            int index = getPartition(nums, left, right);
+            quickSort(nums, left, index - 1);
+            quickSort(nums, index + 1, right);
+        }
+
+        return nums;
+    }
+
+    private int getPartition(int[] nums, int left, int right) {
+        int index = left + 1;
+
+        for (int i = index; i <= right; i++) {
+            if (nums[i] < nums[left]) {
+                swap(nums, index++, i);
+            }
+        }
+        index--;
+
+        swap(nums, index, left);
+
+        return index;
+    }
+
+    private void swap(int[] arr, int i, int j) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
     }
 
 }

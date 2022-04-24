@@ -39,4 +39,10 @@ class SortTest {
         LogUtil.printAfterLog(solution.mergeSort(nums1));
         LogUtil.printAfterLog(solution.mergeSort(nums2));
     }
+
+    @Test
+    void quickSort() {
+        LogUtil.printAfterLog(solution.quickSort(nums1, 0, nums1.length - 1));
+        LogUtil.printAfterLog(solution.quickSort(nums2, 0, nums2.length - 1));
+    }
 }
