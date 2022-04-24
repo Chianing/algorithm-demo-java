@@ -25,4 +25,10 @@ class TraverseTest {
         LogUtil.printAfterLog(solution.postorderTraversal(TreeNode.getTree()));
         LogUtil.printAfterLog(solution.postorderTraversal(TreeNode.getTree2()));
     }
+
+    @Test
+    void levelOrder() {
+        LogUtil.printAfterLog(solution.levelOrder(TreeNode.getTree()));
+        LogUtil.printAfterLog(solution.levelOrder(TreeNode.getTree2()));
+    }
 }

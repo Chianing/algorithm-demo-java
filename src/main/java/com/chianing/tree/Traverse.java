@@ -2,10 +2,7 @@ package com.chianing.tree;
 
 import com.chianing.common.model.TreeNode;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * 二叉树遍历
@@ -97,6 +94,43 @@ public class Traverse {
 
         return resultList;
 
+    }
+
+    /**
+     * 层次遍历
+     * <a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/">https://leetcode-cn.com/problems/binary-tree-level-order-traversal/</a>
+     */
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        if (root == null) {
+            return Collections.emptyList();
+        }
+
+        List<List<Integer>> resultList = new ArrayList<>();
+        Queue<TreeNode> tmpQueue = new ArrayDeque<>();
+        tmpQueue.add(root);
+
+        while (!tmpQueue.isEmpty()) {
+            int size = tmpQueue.size();
+            List<Integer> tmpList = new ArrayList<>();
+
+            for (int i = 0; i < size; i++) {
+                TreeNode node = tmpQueue.poll();
+
+                if (node.left != null) {
+                    tmpQueue.offer(node.left);
+                }
+                if (node.right != null) {
+                    tmpQueue.offer(node.right);
+                }
+
+                tmpList.add(node.val);
+            }
+
+            resultList.add(tmpList);
+
+        }
+
+        return resultList;
     }
 
 }
